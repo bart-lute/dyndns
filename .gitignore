@@ -3,3 +3,4 @@
 .env
 .env-docker
 inadyn.conf
+__pycache__
