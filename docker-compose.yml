@@ -1,0 +1,14 @@
+services:
+  webapp:
+    image: dyndns/webapp
+    build: ./build/webapp
+
+  nginx:
+    image: dyndns/nginx
+    build: ./build/nginx
+    ports:
+      - "443:443"
+
+  inadyn:
+    image: dyndns/inadyn
+    build: ./build/inadyn

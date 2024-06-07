@@ -1,0 +1,7 @@
+custom dyn {
+    username    = DYNUSERNAME
+    password    = DYNPASSWORD
+    ddns-server = nginx
+    ddns-path   = "/updatedns?ip=%i&host=%h"
+    hostname    = lf14.nl
+}
