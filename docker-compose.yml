@@ -2,13 +2,20 @@ services:
   webapp:
     image: dyndns/webapp
     build: ./build/webapp
+    restart: always
 
   nginx:
     image: dyndns/nginx
     build: ./build/nginx
+    depends_on:
+      - webapp
     ports:
       - "443:443"
+    restart: always
 
   inadyn:
     image: dyndns/inadyn
     build: ./build/inadyn
+    depends_on:
+      - nginx
+    restart: always
