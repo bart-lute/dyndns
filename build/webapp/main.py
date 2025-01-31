@@ -37,10 +37,11 @@ def authorize(credentials: Annotated[HTTPBasicCredentials, Depends(security)]):
 
 
 def update_rout53(ip: str, host: str):
-    logger.info(f"Updating Route53 with IP: {ip}, Host: {host}...")
+    hosted_zone_id = os.getenv(f"HOSTED_ZONE_ID_{host.replace(".", "_").upper()}")
+    logger.info(f"Updating Route53 with IP: {ip}, Host: {host}, ZoneID: {hosted_zone_id}...")
     client = boto3.client("route53")
     response = client.change_resource_record_sets(
-        HostedZoneId=os.getenv("HOSTED_ZONE_ID"),
+        HostedZoneId=hosted_zone_id,
         ChangeBatch={
             "Changes": [
                 {

@@ -1,7 +1,25 @@
-custom dyn {
+period = 300
+
+custom lf14 {
     username    = DYNUSERNAME
     password    = DYNPASSWORD
     ddns-server = nginx
     ddns-path   = "/updatedns?ip=%i&host=%h"
     hostname    = lf14.nl
+}
+
+custom ginkio {
+    username    = DYNUSERNAME
+    password    = DYNPASSWORD
+    ddns-server = nginx
+    ddns-path   = "/updatedns?ip=%i&host=%h"
+    hostname    = ginkio.nl
+}
+
+custom bartlute {
+    username    = DYNUSERNAME
+    password    = DYNPASSWORD
+    ddns-server = nginx
+    ddns-path   = "/updatedns?ip=%i&host=%h"
+    hostname    = bartlute.nl
 }
